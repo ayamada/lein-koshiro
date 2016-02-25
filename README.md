@@ -7,18 +7,26 @@ Yet another [lein-ancient](https://github.com/xsc/lein-ancient)
 
 # Usage
 
-Add your `:plugins` to `[jp.ne.tir/lein-koshiro "0.1.0"]`,
+Add your `:plugins` to `[jp.ne.tir/lein-koshiro "0.1.1"]`,
 and run `lein koshiro`
 
 ~~~
 $ cat project.clj
 (defproject example "0.1.0-SNAPSHOT"
+  :plugins [[jp.ne.tir/lein-koshiro "0.1.1"]]
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/java.jdbc "0.4.1"]])
+                 [org.clojure/java.jdbc "0.4.1"]]
+  :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]]}
+             :test {:plugins [[lein-midje "3.1"]]
+                    :dependencies [[midje "1.8.2"]]}})
 
 $ lein koshiro
+[jp.ne.tir/lein-koshiro "0.1.1"] => (latest-stable)
 [org.clojure/clojure "1.8.0"] => (latest-stable)
 [org.clojure/java.jdbc "0.4.1"] => [org.clojure/java.jdbc "0.4.2"] !!!
+[javax.servlet/servlet-api "2.5"] => (latest-stable)
+[lein-midje/lein-midje "3.1"] => [lein-midje/lein-midje "3.2"] !!!
+[midje/midje "1.8.2"] => [midje/midje "1.8.3"] !!!
 All done.
 ~~~
 
@@ -28,6 +36,9 @@ All done.
 
 
 # ChangeLog
+
+- 0.1.1 (2016-02-25)
+    - Add to check :plugins
 
 - 0.1.0 (2016-02-25)
     - Initial release
