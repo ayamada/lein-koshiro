@@ -22,7 +22,7 @@
           target (pr-str (if (empty? dep-opts)
                            [artifact-id current-version]
                            [artifact-id current-version '...]))]
-      (print target "")
+      (print target "=>" "")
       (let [include-snapshot? (version-clj/snapshot? current-version)
             include-qualified? (version-clj/qualified? current-version)
             latest-label (cond
@@ -48,5 +48,5 @@
                                     (pr-str latest-qualified)
                                     ")")
                                (pr-str latest-stable))))]
-        (println "=>" result))))
+        (println result))))
   (println "All done."))
