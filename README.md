@@ -2,7 +2,7 @@
 
 Yet another [lein-ancient](https://github.com/xsc/lein-ancient)
 
-[![Clojars Project](http://clojars.org/lein-koshiro/latest-version.svg)](http://clojars.org/lein-koshiro)
+[![Clojars Project](https://img.shields.io/clojars/v/jp.ne.tir/lein-koshiro.svg)](https://clojars.org/jp.ne.tir/lein-koshiro)
 
 
 # Usage
