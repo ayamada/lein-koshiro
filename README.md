@@ -30,6 +30,14 @@ $ lein koshiro
 All done.
 ~~~
 
+# Development
+
+## Run localtest
+
+Run `lein koshiro` in this repository,
+to check `:for-localtest` profile in `project.clj` on this repository
+
+
 # TODO
 
 - Add to support optional argument by lein
