@@ -3,8 +3,11 @@
             [project-clj.core]))
 
 (defn- get-dependencies-from-project-clj []
-  (eval '(apply concat (project-clj.core/get :dependencies)
-                (map (fn [[k v]] (:dependencies v))
+  (eval '(apply concat
+                (project-clj.core/get :plugins)
+                (project-clj.core/get :dependencies)
+                (map (fn [[k v]]
+                       (concat (:plugins v) (:dependencies v)))
                      (project-clj.core/get :profiles)))))
 
 (defn koshiro
