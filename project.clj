@@ -1,4 +1,4 @@
-(defproject jp.ne.tir/lein-koshiro "0.1.0"
+(defproject jp.ne.tir/lein-koshiro "0.1.1-SNAPSHOT"
   :description "Yet another lein-ancient"
   :url "https://github.com/ayamada/lein-koshiro"
   :license {:name "MIT License"
