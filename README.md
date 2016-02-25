@@ -7,7 +7,7 @@ Yet another [lein-ancient](https://github.com/xsc/lein-ancient)
 
 # Usage
 
-Add your `:plugins` to `[jp.ne.tir/lein-koshiro "0.1.1"]`,
+Add your `:plugins` to `[jp.ne.tir/lein-koshiro "X.Y.Z"]`,
 and run `lein koshiro`
 
 ~~~
