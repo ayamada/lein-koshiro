@@ -17,7 +17,7 @@
     (let [[artifact-id current-version & dep-opts] dependency
           ;; TODO: customize by args
           ancient-options {:snapshots? false
-                           :qualified? true
+                           :qualified? false
                            ;:repositories {...}
                            }
           latest-version (ancient/latest-version-string! artifact-id
