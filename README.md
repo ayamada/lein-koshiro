@@ -13,7 +13,7 @@ and run `lein koshiro`
 ~~~
 $ cat project.clj
 (defproject example "0.1.0-SNAPSHOT"
-  :plugins [[jp.ne.tir/lein-koshiro "0.1.2"]]
+  :plugins [[jp.ne.tir/lein-koshiro "0.1.3"]]
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/java.jdbc "0.4.1"]]
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]]}
@@ -21,7 +21,7 @@ $ cat project.clj
                     :dependencies [[midje "1.8.2"]]}})
 
 $ lein koshiro
-[jp.ne.tir/lein-koshiro "0.1.2"] => (latest-stable)
+[jp.ne.tir/lein-koshiro "0.1.3"] => (latest-stable)
 [org.clojure/clojure "1.8.0"] => (latest-stable)
 [org.clojure/java.jdbc "0.4.1"] => "0.4.2"
 [javax.servlet/servlet-api "2.5"] => (latest-stable, but found "3.0-alpha-1")
