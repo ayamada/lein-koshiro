@@ -40,6 +40,10 @@ to check `:for-localtest` profile in `project.clj` on this repository
 
 # ChangeLog
 
+- 0.1.4 (2016-03-27)
+    - Distinct same dependecies
+    - Bump up version of dependencies
+
 - 0.1.3 (2016-02-26)
     - Refactor deep check code
 
