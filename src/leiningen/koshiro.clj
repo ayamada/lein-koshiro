@@ -3,13 +3,26 @@
             [ancient-clj.core :as ancient-clj]
             [version-clj.core :as version-clj]))
 
-(defn- get-all-dependencies-from-project-clj []
+(defn- get-all-dependencies []
   (eval `(apply concat
                 (project-clj/get :plugins)
                 (project-clj/get :dependencies)
                 (map (fn [[k# v#]]
                        (concat (:plugins v#) (:dependencies v#)))
                      (project-clj/get :profiles)))))
+
+(defn- dependency= [d1 d2]
+  (and
+    (= (first d1) (first d2))
+    (= (second d1) (second d2))))
+
+(defn- distinct-dependencies [dependencies]
+  (reverse (reduce (fn [prev dependency]
+                     (if (empty? (filter #(dependency= % dependency) prev))
+                       (cons dependency prev)
+                       prev))
+                   nil
+                   dependencies)))
 
 (defn- get-latest-version [artifact-id options]
   (ancient-clj/latest-version-string! artifact-id options))
@@ -41,7 +54,7 @@
 (defn koshiro
   "Check version of all :dependencies (include :profiles) in your project.clj"
   [project & args]
-  (doseq [dependency (get-all-dependencies-from-project-clj)]
+  (doseq [dependency (distinct-dependencies (get-all-dependencies))]
     (let [[artifact-id current-version & dep-opts] dependency
           target (pr-str (if (empty? dep-opts)
                            [artifact-id current-version]
