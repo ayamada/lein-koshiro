@@ -1,19 +1,19 @@
 (defproject jp.ne.tir/lein-koshiro "0.1.5-SNAPSHOT"
+  :min-lein-version  "2.7.0"
   :description "Yet another lein-ancient"
   :url "https://github.com/ayamada/lein-koshiro"
   :license {:name "MIT License"
             :url "http://opensource.org/licenses/MIT"
             :year 2016
             :key "mit"}
+  ;; for test :managed-dependencies
+  ;:managed-dependencies [[jp.ne.tir/project-clj "0.1.6"]]
   :dependencies [[jp.ne.tir/project-clj "0.1.6"
                   :exclusions [org.codehaus.plexus/plexus-utils
                                org.apache.maven.wagon/wagon-provider-api]]
-                 [ancient-clj "0.3.12"
-                  :exclusions [org.clojure/clojure]]
-                 [version-clj "0.1.2"
-                  :exclusions [org.clojure/clojure]]]
+                 [ancient-clj "0.3.14" :exclusions [org.clojure/clojure]]
+                 [version-clj "0.1.2" :exclusions [org.clojure/clojure]]]
   ;; :pedantic? :abort
-  :min-lein-version "2.4.0"
   :eval-in-leiningen true
   ;; These profiles are for test run
   :profiles {:for-localtest {:plugins [[lein-midje "3.1"]

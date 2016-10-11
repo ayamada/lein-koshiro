@@ -3,13 +3,21 @@
             [ancient-clj.core :as ancient-clj]
             [version-clj.core :as version-clj]))
 
+(defn- has-version? [dependency]
+  (string? (second dependency)))
+
 (defn- get-all-dependencies []
-  (eval `(apply concat
-                (project-clj/get :plugins)
-                (project-clj/get :dependencies)
-                (map (fn [[k# v#]]
-                       (concat (:plugins v#) (:dependencies v#)))
-                     (project-clj/get :profiles)))))
+  (filter has-version?
+          (eval `(apply concat
+                        (project-clj/get :plugins)
+                        (project-clj/get :dependencies)
+                        (project-clj/get :managed-dependencies)
+                        (map (fn [[k# v#]]
+                               (concat (:plugins v#)
+                                       (:dependencies v#)
+                                       ;(:managed-dependencies #v)
+                                       ))
+                             (project-clj/get :profiles))))))
 
 (defn- dependency= [d1 d2]
   (and
