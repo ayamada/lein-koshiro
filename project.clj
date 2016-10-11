@@ -1,4 +1,4 @@
-(defproject jp.ne.tir/lein-koshiro "0.1.5"
+(defproject jp.ne.tir/lein-koshiro "0.1.6-SNAPSHOT"
   :min-lein-version  "2.7.0"
   :description "Yet another lein-ancient"
   :url "https://github.com/ayamada/lein-koshiro"
