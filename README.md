@@ -13,7 +13,7 @@ and run `lein koshiro`
 ~~~
 $ cat project.clj
 (defproject example "0.1.0-SNAPSHOT"
-  :plugins [[jp.ne.tir/lein-koshiro "0.1.5"]]
+  :plugins [[jp.ne.tir/lein-koshiro "0.1.6"]]
   :managed-dependencies [[org.clojure/java.jdbc "0.4.1"]]
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/java.jdbc]]
@@ -22,7 +22,7 @@ $ cat project.clj
                     :dependencies [[midje "1.8.2"]]}})
 
 $ lein koshiro
-[jp.ne.tir/lein-koshiro "0.1.5"] => (latest-stable)
+[jp.ne.tir/lein-koshiro "0.1.6"] => (latest-stable)
 [org.clojure/clojure "1.8.0"] => (latest-stable)
 [org.clojure/java.jdbc "0.4.1"] => "0.4.2"
 [javax.servlet/servlet-api "2.5"] => (latest-stable, but found "3.0-alpha-1")
@@ -40,6 +40,10 @@ to check `:for-localtest` profile in `project.clj` on this repository
 
 
 # ChangeLog
+
+- 0.1.6 (2017-11-13)
+    - Fix for leiningen-2.8.1
+    - Bump up version of dependencies
 
 - 0.1.5 (2016-10-11)
     - Support to :managed-dependencies
