@@ -1,6 +1,8 @@
+THIS PROJECT HAS BEEN UNMAINTAINED. PLEASE USE https://github.com/liquidz/antq
+
 # lein-koshiro
 
-Yet another [lein-ancient](https://github.com/xsc/lein-ancient)
+Yet another [lein-ancient](https://github.com/xsc/lein-ancient) for me
 
 [![Clojars Project](https://img.shields.io/clojars/v/jp.ne.tir/lein-koshiro.svg)](https://clojars.org/jp.ne.tir/lein-koshiro)
 
